@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DanZinagri\\Documents\\Claude\\FemaleBodyVariants\\Source\\FemaleBodyVariants.csproj": {}
+    "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FemaleBodyVariantsContinued\\Source\\FemaleBodyVariants.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DanZinagri\\Documents\\Claude\\FemaleBodyVariants\\Source\\FemaleBodyVariants.csproj": {
+    "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FemaleBodyVariantsContinued\\Source\\FemaleBodyVariants.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DanZinagri\\Documents\\Claude\\FemaleBodyVariants\\Source\\FemaleBodyVariants.csproj",
+        "projectUniqueName": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FemaleBodyVariantsContinued\\Source\\FemaleBodyVariants.csproj",
         "projectName": "FemaleBodyVariants",
-        "projectPath": "C:\\Users\\DanZinagri\\Documents\\Claude\\FemaleBodyVariants\\Source\\FemaleBodyVariants.csproj",
+        "projectPath": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FemaleBodyVariantsContinued\\Source\\FemaleBodyVariants.csproj",
         "packagesPath": "C:\\Users\\DanZinagri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DanZinagri\\Documents\\Claude\\FemaleBodyVariants\\Source\\obj\\",
+        "outputPath": "E:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FemaleBodyVariantsContinued\\Source\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DanZinagri\\AppData\\Roaming\\NuGet\\NuGet.Config",

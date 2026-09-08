@@ -3,3 +3,8 @@ C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\Femal
 C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.csproj.CoreCompileInputs.cache
 C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\FemaleBodyVariantsContinued\1.6\Assemblies\FemaleBodyVariants.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\FemaleBodyVariantsContinued\Source\obj\Release\FemaleBodyVariants.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\FemaleBodyVariantsContinued\Source\obj\Release\FemaleBodyVariants.GeneratedMSBuildEditorConfig.editorconfig
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\FemaleBodyVariantsContinued\Source\obj\Release\FemaleBodyVariants.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\FemaleBodyVariantsContinued\Source\obj\Release\FemaleBodyVariants.dll

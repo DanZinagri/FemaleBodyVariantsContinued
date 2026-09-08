@@ -1,34 +1,42 @@
-using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace FemaleBodyVariants;
 
-[HarmonyPatch(typeof(FurDef), "GetFurBodyGraphicPath")]
+// Swaps a fur body path for its "_Female" variant on female Thin, Fat or Hulk pawns.
+//
+// This sits on the FurDef lookup rather than the fur render node, so every caller sees the
+// swapped path: the vanilla fur node, Big and Small's fur nodes, and any mod that reads a
+// FurDef path to build a mask. That is intended, since those should follow the body shape.
+[HarmonyPatch(typeof(FurDef), nameof(FurDef.GetFurBodyGraphicPath))]
 public static class FurDef_GetFurBodyGraphicPath_Patch
 {
-	[HarmonyPostfix]
-	public static void Postfix(FurDef __instance, ref Pawn pawn, ref string __result)
+	public static void Postfix(Pawn pawn, ref string __result)
 	{
-		if (__result == null || (int)pawn.Drawer.renderer.CurRotDrawMode == 4 || (ModsConfig.AnomalyActive && pawn.IsMutant && !GenList.NullOrEmpty<BodyTypeGraphicData>((IList<BodyTypeGraphicData>)pawn.mutant.Def.bodyTypeGraphicPaths)) || (ModsConfig.AnomalyActive && pawn.IsCreepJoiner && pawn.story.bodyType != null && !GenList.NullOrEmpty<BodyTypeGraphicData>((IList<BodyTypeGraphicData>)pawn.creepjoiner.form.bodyTypeGraphicPaths)))
+		if (__result == null || pawn.gender != Gender.Female)
 		{
 			return;
 		}
-		object obj = pawn.story?.bodyType?.bodyNakedGraphicPath;
-		if (obj == null)
+		if (pawn.Drawer.renderer.CurRotDrawMode == RotDrawMode.Dessicated)
 		{
 			return;
 		}
-		string text = __result;
-		if ((int)pawn.gender != 1 && text != null && !text.Contains("_Female") && (text.Contains("_Thin") || text.Contains("_Fat") || text.Contains("_Hulk")))
+		// Mutants and creep joiners with their own body art keep the fur that matches it.
+		if (ModsConfig.AnomalyActive)
 		{
-			string text2 = text + "_Female";
-			if ((Object)(object)ContentFinder<Texture2D>.Get(text2 + "_south", false) != (Object)null)
+			if (pawn.IsMutant && !pawn.mutant.Def.bodyTypeGraphicPaths.NullOrEmpty())
 			{
-				__result = text2;
+				return;
 			}
+			if (pawn.IsCreepJoiner && !pawn.creepjoiner.form.bodyTypeGraphicPaths.NullOrEmpty())
+			{
+				return;
+			}
+		}
+		if (FemaleVariantPath.TryGet(__result, out string femalePath))
+		{
+			__result = femalePath;
 		}
 	}
 }
