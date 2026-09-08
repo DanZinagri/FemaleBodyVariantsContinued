@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+  <name>Female Body Variants Continued</name>
+  <author>DanZinagri and tiagocc0</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <packageId>tiagocc0.FemaleBodyVariants</packageId>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <url></url>
+
+  <description>
+Original author is no longer interested in maintaining these mods and thus i've taken them over to help fix a few underlying issues along with just give them a new home to keep maintaining them. PackageId is the same to satisfy prereqs if swapping.
+
+Original Description:
+This mod provides a way to load, on the fly, a different body texture for thin, fat and hulk females.
+It will use these names:
+
+Naked_Thin_Female_south.png
+Naked_Thin_Female_east.png
+Naked_Thin_Female_north.png
+
+Naked_Fat_Female_east.png
+Naked_Fat_Female_north.png
+Naked_Fat_Female_south.png
+
+Naked_Hulk_Female_east.png
+Naked_Hulk_Female_north.png
+Naked_Hulk_Female_south.png
+
+I made a simple copy of the original textures for this mod so it won't try to load a texture that doesn't exists.
+So this mod be itself won't change anything visually, but in conjunction with a texture mode that contains the files above you will be able to see the female variation of those three body types.
+
+Anyone is free to use mod as a pre requisite for your own mod or copy the dll to your own mod.
+
+As I'm making a body retexture mod I will have this mod as a pre requisite for my future mod.
+
+Might not be compatible with HAR, if you are using HAR you probably don't need this anyway.
+
+Male pawn body texture mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2068281501
+Female pawn body texture is a variation based on the mod above.
+All credit for the texture from the screenshot and my future body texture mod goes to ireth92
+https://steamcommunity.com/id/ireth92
+
+Mod with source (This mod does not contain the textures from the screenshot):
+https://github.com/purpleorangegames/FemaleBodyVariants
+
+  </description>
+</ModMetaData>

@@ -1,0 +1,5 @@
+C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\1.6\Assemblies\FemaleBodyVariants.dll
+C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.csproj.AssemblyReference.cache
+C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.csproj.CoreCompileInputs.cache
+C:\Users\DanZinagri\Documents\Claude\FemaleBodyVariants\Source\obj\Release\FemaleBodyVariants.dll
