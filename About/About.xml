@@ -9,6 +9,7 @@
   <packageId>tiagocc0.FemaleBodyVariants</packageId>
   <loadAfter>
     <li>brrainz.harmony</li>
+    <li>erdelf.HumanoidAlienRaces</li>
   </loadAfter>
   <modDependencies>
     <li>
