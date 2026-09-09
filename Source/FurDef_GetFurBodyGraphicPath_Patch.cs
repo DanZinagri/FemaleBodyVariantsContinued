@@ -34,7 +34,9 @@ public static class FurDef_GetFurBodyGraphicPath_Patch
 				return;
 			}
 		}
-		if (FemaleVariantPath.TryGet(__result, out string femalePath))
+		// The lookup that produced __result matched on pawn.story.bodyType, so that def is the
+		// key this path was chosen for.
+		if (FemaleVariantPath.TryGet(pawn.story.bodyType, __result, out string femalePath))
 		{
 			__result = femalePath;
 		}

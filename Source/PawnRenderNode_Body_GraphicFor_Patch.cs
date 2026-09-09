@@ -36,7 +36,7 @@ public static class PawnRenderNode_Body_GraphicFor_Patch
 		{
 			return;
 		}
-		if (FemaleVariantPath.TryGet(basePath, out string femalePath))
+		if (FemaleVariantPath.TryGet(pawn.story.bodyType, basePath, out string femalePath))
 		{
 			__result = GraphicDatabase.Get<Graphic_Multi>(femalePath, __instance.ShaderFor(pawn), Vector2.one, __instance.ColorFor(pawn));
 		}

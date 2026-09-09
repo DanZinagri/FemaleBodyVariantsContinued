@@ -1,30 +1,31 @@
 using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace FemaleBodyVariants;
 
-// Resolves "<path>_Female" for a Thin, Fat or Hulk body path when that texture exists.
+// Resolves "<path>_Female" for the body path of a Thin, Fat or Hulk pawn when that texture exists.
 //
-// The answer is remembered per base path for the session. A ContentFinder miss walks every
-// running mod's content, then Unity's Resources folder, then every mod asset bundle, which
-// costs milliseconds per probe on a large mod list. The fur probes miss for most pawns
-// because this mod ships only the naked body variants, and the lookup repeats on every
-// render tree rebuild. The set of textures is fixed after startup, so caching is safe.
-// Main thread only, same as ContentFinder itself.
+// Eligibility is decided by the pawn's body type def, not by how the path is spelled, so a
+// FurDef entry such as <Fat>.../MerfolkBodies/fat</Fat> qualifies. The vanilla naming is kept
+// as a fallback for a mod-defined body type that follows it.
 public static class FemaleVariantPath
 {
 	private static readonly Dictionary<string, string> cache = new Dictionary<string, string>();
 
-	public static bool TryGet(string basePath, out string femalePath)
+	public static bool TryGet(BodyTypeDef bodyType, string basePath, out string femalePath)
 	{
+		femalePath = null;
+		if (basePath == null || !IsSharedBodyType(bodyType, basePath))
+		{
+			return false;
+		}
 		if (cache.TryGetValue(basePath, out femalePath))
 		{
 			return femalePath != null;
 		}
-		femalePath = null;
-		if (!basePath.Contains("_Female")
-			&& (basePath.Contains("_Thin") || basePath.Contains("_Fat") || basePath.Contains("_Hulk")))
+		if (!basePath.Contains("_Female"))
 		{
 			string candidate = basePath + "_Female";
 			if (ContentFinder<Texture2D>.Get(candidate + "_south", reportFailure: false) != null)
@@ -34,5 +35,17 @@ public static class FemaleVariantPath
 		}
 		cache[basePath] = femalePath;
 		return femalePath != null;
+	}
+
+	// Thin, Fat and Hulk are the body types both genders share, so they are the ones a female
+	// variant can exist for. Checked before the cache because one path can serve several body
+	// types in a FurDef, and the answer must not leak from an eligible type to an ineligible one.
+	private static bool IsSharedBodyType(BodyTypeDef bodyType, string path)
+	{
+		if (bodyType == BodyTypeDefOf.Thin || bodyType == BodyTypeDefOf.Fat || bodyType == BodyTypeDefOf.Hulk)
+		{
+			return true;
+		}
+		return path.Contains("_Thin") || path.Contains("_Fat") || path.Contains("_Hulk");
 	}
 }
