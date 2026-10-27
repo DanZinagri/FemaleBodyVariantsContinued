@@ -23,14 +23,10 @@ public static class PawnRenderNode_Body_GraphicFor_Patch
 		{
 			return;
 		}
-		// Inherited from the original mod: rotting corpses keep the base body.
-		if (pawn.Drawer.renderer.CurRotDrawMode == RotDrawMode.Rotting)
-		{
-			return;
-		}
-		// Only act when vanilla chose the plain naked body. Dessicated, mutant and creep
-		// joiner bodies, the EmptyImage placeholder, and graphics already replaced by an
-		// earlier patch all carry a different path and are left alone.
+		// Only act when vanilla chose the plain naked body. Dessicated bodies, the EmptyImage
+		// placeholder, and graphics already replaced by an earlier patch all carry a different
+		// path and are left alone. Mutant and creep joiner bodies are swapped at their own
+		// lookup instead (AnomalyBodyGraphicPath_Patch).
 		string basePath = pawn.story?.bodyType?.bodyNakedGraphicPath;
 		if (basePath == null || __result.path != basePath)
 		{
